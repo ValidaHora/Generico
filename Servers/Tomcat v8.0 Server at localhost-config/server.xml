@@ -130,7 +130,7 @@
       	
 
 
-      <Context docBase="EstiveAqui" path="/EstiveAqui" reloadable="true" source="org.eclipse.jst.jee.server:EstiveAqui"/></Host>
+      <Context docBase="EstiveAqui" path="/EstiveAqui" reloadable="true" source="org.eclipse.jst.jee.server:EstiveAqui"/><Context docBase="ValidaHora" path="/ValidaHora" reloadable="true" source="org.eclipse.jst.jee.server:ValidaHora"/></Host>
     </Engine>
   </Service>
 </Server>

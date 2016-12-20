@@ -11,23 +11,21 @@
             defaultAutoCommit="false"
             username="root" password="rootadmin" auth="Container"
             driverClassName="com.mysql.jdbc.Driver" type="javax.sql.DataSource"
-            maxActive="10" maxIdle="10" minIdle="0" maxWait="10000"
+            initialSize="2" maxActive="40" maxIdle="5" minIdle="1" maxWait="10000"
             testWhileIdle="true" validationQuery="SELECT 1" validationQueryTimeout="2"
             timeBetweenEvictionRunsMillis="60000" minEvictableIdleTimeMillis="600000"
-            removeAbandoned="true" removeAbandonedTimeout="60000" logAbandoned="true"
+            removeAbandoned="true" removeAbandonedTimeout="30" logAbandoned="true"
   />
 
   <Resource name="jdbc/EstiveAqui" url="jdbc:mysql://localhost:3306/estiveaqui"
             defaultAutoCommit="false"
             username="root" password="rootadmin" auth="Container"
             driverClassName="com.mysql.jdbc.Driver" type="javax.sql.DataSource"
-            maxActive="10" maxIdle="10" minIdle="0" maxWait="10000"
+            initialSize="2" maxActive="40" maxIdle="5" minIdle="1" maxWait="10000"
             testWhileIdle="true" validationQuery="SELECT 1" validationQueryTimeout="2"
             timeBetweenEvictionRunsMillis="60000" minEvictableIdleTimeMillis="600000"
-            removeAbandoned="true" removeAbandonedTimeout="60000" logAbandoned="true"
+            removeAbandoned="true" removeAbandonedTimeout="30" logAbandoned="true"
   />
-
-   <Parameter name="Ambiente" override="false" value="Desenvolvimento"/>
 
    <Parameter name="AWSChaveDeAcesso" value="AKIAJGGA2ADFUWC2CXTA" override="false"/>
    <Parameter name="AWSSenha" value="bQsk+o/RE2lmGEH+TUCHQbZC5z1iWKkc/CI89uPk" override="false"/>
@@ -38,4 +36,10 @@
             mail.smtp.host="email-smtp.us-east-1.amazonaws.com"
             mail.smtp.port="587"
   />
+  
+  <Parameter name="Ambiente" value="Desenvolvimento" override="false"/>
+  <Parameter name="NomeServidor" value="localhost" override="false"/>
+  <Parameter name="PortaServidor" value="8080" override="false"/>
+  <Parameter name="SenhaValidaHora" value="Teste" override="false"/>
+  
 </Context>
