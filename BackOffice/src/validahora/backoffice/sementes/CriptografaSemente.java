@@ -5,7 +5,7 @@ import validahora.token.SementeException;
 import validahora.token.criptografia.CriptografiaException;
 
 /**
- * Classe que extende a classe Semente para implementar o mÃ©todo de criptografia de sementes.
+ * Classe que extende a classe Semente para implementar o método de criptografia de sementes.
  * 
  * @author Haroldo
  *

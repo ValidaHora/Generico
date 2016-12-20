@@ -16,7 +16,7 @@ import validahora.token.SementeException;
 import validahora.token.criptografia.CriptografiaException;
 
 /**
- * Servlet que criptografa todas as sementes que est√£o com texto em aberto.
+ * Servlet que criptografa todas as sementes que est„o com texto em aberto.
  */
 @WebServlet(description = "Criptografa as sementes do BD.", urlPatterns = { "/SrvltCriptografaSementesCodigo1" })
 public class SrvltCriptografaSementes extends HttpServlet

@@ -5,9 +5,9 @@ import java.sql.Timestamp;
 import org.joda.time.DateTime;
 
 /**
- * Classe que implementa m√©todos est√°ticos para aux√≠lio no uso do SQL.
+ * Classe que implementa mÈtodos est·ticos para auxÌlio no uso do SQL.
  * <P>
- * M√©todos como transforma√ß√£o de org.joda.time.DateTime para java.sql.Date
+ * MÈtodos como transformaÁ„o de org.joda.time.DateTime para java.sql.Date
  * 
  * @author Haroldo
  *

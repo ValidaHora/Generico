@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 public class SqlUtilMySql 
 {
   /**
-   * Retorna o Ãºltimo id que foi usado no insert de uma tabela com auto incremento.
+   * Retorna o último id que foi usado no insert de uma tabela com auto incremento.
    * 
    * @param connDB
    * @return
@@ -22,7 +22,7 @@ public class SqlUtilMySql
     //  Executa a query
     ResultSet rs = stmt.executeQuery();
 
-    //  LÃª os resultados.
+    //  Lê os resultados.
     rs.next();
     return rs.getLong(1);
   }
@@ -41,7 +41,7 @@ public class SqlUtilMySql
     //  Executa a query
     ResultSet rs = stmt.executeQuery();
 
-    //  LÃª os resultados.
+    //  Lê os resultados.
     rs.next();
     return SqlUtil.fromSqlTimestamp(rs.getTimestamp(1));
   }

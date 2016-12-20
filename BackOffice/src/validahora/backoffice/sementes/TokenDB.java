@@ -20,7 +20,7 @@ public class TokenDB extends SqlDB
   }
 
   /**
-   * LÃª todos os tokens cujas sementes nÃ£o estÃ£o criptografadas.
+   * Lê todos os tokens cujas sementes não estão criptografadas.
    * 
    * @param idCliente
    * @return

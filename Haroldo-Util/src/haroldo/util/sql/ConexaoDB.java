@@ -47,7 +47,7 @@ public class ConexaoDB
     }
     catch (SQLException | NamingException e)
     {
-      log.error("Exce√ß√£o para instanciar ConexaoDB()", e);
+      log.error("ExceÁ„o para instanciar ConexaoDB()", e);
       e.printStackTrace();
       throw e;
     }
@@ -73,7 +73,7 @@ public class ConexaoDB
   }
 
   /**
-   * Inicia e retorna uma conex√£o.
+   * Inicia e retorna uma conex„o.
    * 
    * @throws SQLException
    * @throws NamingException
@@ -81,7 +81,7 @@ public class ConexaoDB
   private static boolean recuperandoConexao = false;
   public Connection getConn() throws SQLException
   {
-    log.trace("Obtendo conex√£o com o BD.");
+    log.trace("Obtendo conex„o com o BD.");
     if (ds == null)
       return null;
 
@@ -93,7 +93,7 @@ public class ConexaoDB
       long msIni = System.currentTimeMillis();
       conn = ds.getConnection();
       long msFim = System.currentTimeMillis();
-      log.trace("Conex√£o obtida em {} milisegundos.", msFim - msIni);
+      log.trace("Conex„o obtida em {} milisegundos.", msFim - msIni);
       conn.setAutoCommit(false);
     }
     catch (SQLException e1)
@@ -101,25 +101,25 @@ public class ConexaoDB
       if (!recuperandoConexao)
       {
         boolean recConMetodo = false;
-        //  Tentando se recuperar de exce√ß√£o
-        log.error("Tentando se recuperar de exce√ß√£o: ", e1);
+        //  Tentando se recuperar de exceÁ„o
+        log.error("Tentando se recuperar de exceÁ„o: ", e1);
         synchronized (envContext)
         {
           log.debug("Entrando no bloco sincronizado.");
           if (!recuperandoConexao)
           {
             recuperandoConexao = true;
-            recConMetodo = true;  //  Marca como m√©todo que est√° tentando resolver o problema de conex√£o.
-            log.debug("Processo de recupera√ß√£o iniciado.");
+            recConMetodo = true;  //  Marca como mÈtodo que est· tentando resolver o problema de conex„o.
+            log.debug("Processo de recuperaÁ„o iniciado.");
             try
             {
-              log.debug("Recupera√ß√£o de conex√£o: Chamando init()...");
+              log.debug("RecuperaÁ„o de conex„o: Chamando init()...");
               init();
-              log.debug("Recupera√ß√£o de conex√£o: Retorno do init()");
+              log.debug("RecuperaÁ„o de conex„o: Retorno do init()");
             }
             catch (NamingException | SQLException einit)
             {
-              log.fatal("Exce√ß√£o n√£o recuperada: ", einit);
+              log.fatal("ExceÁ„o n„o recuperada: ", einit);
               einit.printStackTrace();
             }
           }
@@ -129,14 +129,14 @@ public class ConexaoDB
         {
           // Aguarda 5 segundos para religar o flag, liberando as threads que eventualmente estivessem bloqueadas no synchronized.  
           try {Thread.sleep(5 * 1000);} catch (Exception t){ /* Nada a fazer */}
-          log.debug("Fim da recupera√ß√£o da conex√£o.");
+          log.debug("Fim da recuperaÁ„o da conex„o.");
           recuperandoConexao = false;
         }
       }
       else
       {
         //  Se outra thread estiver tentando recuperar, aguarda 10 segundos.
-        log.info("Aguardando recupera√ß√£o de conex√£o...");
+        log.info("Aguardando recuperaÁ„o de conex„o...");
         try {Thread.sleep(10 * 1000);} catch (Exception t){ /* Nada a fazer */}
       }
       
@@ -151,7 +151,7 @@ public class ConexaoDB
       }
       catch (SQLException e2)
       {
-        log.error("Problema na 2a conex√£o com o BD", e2);
+        log.error("Problema na 2a conex„o com o BD", e2);
         e2.printStackTrace();
         throw e2;
       }
@@ -161,8 +161,8 @@ public class ConexaoDB
   }
 
   /**
-   * Para ser usado no "finalize" para fechar conex√£o.
-   * Fecha uma conex√£o sem se preocupar com as mensagens de exce√ß√£o que possam ocorrer.
+   * Para ser usado no "finalize" para fechar conex„o.
+   * Fecha uma conex„o sem se preocupar com as mensagens de exceÁ„o que possam ocorrer.
    * 
    * @param conexao
    */
@@ -174,23 +174,23 @@ public class ConexaoDB
     
     try
     {
-      log.trace("Executando rollback() para fechar conex√£o.");
+      log.trace("Executando rollback() para fechar conex„o.");
       conn.rollback();
     }
     catch (SQLException e)
     {
-      log.info("Erro durante o fechamento de conex√£o. Erro ignorado.", e);
-      //  N√£o faz nada!
+      log.info("Erro durante o fechamento de conex„o. Erro ignorado.", e);
+      //  N„o faz nada!
     }
     try
     {
-      log.trace("Chamando o close() para fechar conex√£o.");
+      log.trace("Chamando o close() para fechar conex„o.");
       conn.close();
     }
     catch (SQLException e)
     {
-      log.info("Erro durante o fechamento de conex√£o. Erro ignorado.", e);
-      //  N√£o faz nada!
+      log.info("Erro durante o fechamento de conex„o. Erro ignorado.", e);
+      //  N„o faz nada!
     }
   }
 }

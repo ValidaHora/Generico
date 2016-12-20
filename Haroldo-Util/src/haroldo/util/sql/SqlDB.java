@@ -5,7 +5,7 @@ public class SqlDB
   protected ConexaoDB connDB = null;
 
   /**
-   * Construtor que recebe o objeto de conex√£o.
+   * Construtor que recebe o objeto de conex„o.
    * 
    * @param conexao
    */
